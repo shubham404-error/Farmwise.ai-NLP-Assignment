@@ -1,5 +1,5 @@
 import streamlit as st
-from pypdf import PdfReader
+#from pypdf import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import os
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
@@ -107,7 +107,7 @@ load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 
-def get_pdf_text(pdf_docs):
+'''def get_pdf_text(pdf_docs):
     text=""
     for pdf in pdf_docs:
         pdf_reader= PdfReader(pdf)
@@ -120,7 +120,7 @@ def get_pdf_text(pdf_docs):
 def get_text_chunks(text):
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=10000, chunk_overlap=1000)
     chunks = text_splitter.split_text(text)
-    return chunks
+    return chunks'''
 
 
 def get_vector_store(text_chunks):
@@ -168,10 +168,10 @@ def user_input(user_question):
     return response
 
 
-pdf_docs=["The_Langham_Chicago.pdf","The_Gwen_Hotel_Chicago.pdf","Waldorf_Astoria_Chicago.pdf","Hyatt_Regency_Chicago.pdf","ANNEXURE.pdf","Membership_Level_Details.pdf","TIMESHARE_AGREEMENT.pdf"]
+'''pdf_docs=["The_Langham_Chicago.pdf","The_Gwen_Hotel_Chicago.pdf","Waldorf_Astoria_Chicago.pdf","Hyatt_Regency_Chicago.pdf","ANNEXURE.pdf","Membership_Level_Details.pdf","TIMESHARE_AGREEMENT.pdf"]
 raw_text = get_pdf_text(pdf_docs)
 text_chunks = get_text_chunks(raw_text)
-get_vector_store(text_chunks)
+get_vector_store(text_chunks)'''
 
 
 def main():
