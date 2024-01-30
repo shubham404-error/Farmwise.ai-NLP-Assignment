@@ -3,7 +3,7 @@ google-generativeai
 python-dotenv
 langchain
 pdfmerge
-PyPDF2
+pypdf
 chromadb
 faiss-cpu
 langchain_google_genai
